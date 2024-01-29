@@ -23,7 +23,7 @@ def add_rating(df):
 def add_poster(df):
     for i, row in tqdm(df.iterrows(), total=df.shape[0]):
         tmdb_id = row["tmdbId"]
-        tmdb_url = f"https://api.themoviedb.org/3/movie/{tmdb_id}?api_key=f2a1fddeef038db026fb3e05415e80f2&language=en-US"
+        tmdb_url = f"https://api.themoviedb.org/3/find/{tmdb_id}?api_key=146cb301b17c8b1bfcf08b2b7143834b&language=en-US&external_source=imdb_id"
         result = requests.get(tmdb_url)
         # final url : https://image.tmdb.org/t/p/original/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg
         try:
